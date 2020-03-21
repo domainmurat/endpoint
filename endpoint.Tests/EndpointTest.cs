@@ -45,6 +45,20 @@ namespace endpoint.Tests
             product6.Id.Should().BeGreaterOrEqualTo(6);
         }
 
+        [Fact]
+        public async Task UpdateTestCase()
+        {
+            await SeedData();
+
+            var createForm0 = GenerateCreateForm("Product6", 10);
+            var response = await Client.PostAsync("/api/product", new StringContent(JsonConvert.SerializeObject(createForm0), Encoding.UTF8, "application/json"));
+
+            response.StatusCode.Should().BeEquivalentTo(201);
+
+            var product6 = JsonConvert.DeserializeObject<ProductDto>(response.Content.ReadAsStringAsync().Result);
+            product6.Id.Should().BeGreaterOrEqualTo(6);
+        }
+
         private void SetUpClient()
         {
 
