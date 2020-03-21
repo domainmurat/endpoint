@@ -39,10 +39,10 @@ namespace endpoint.Tests
             var createForm0 = GenerateCreateForm("Product6", 10);
             var response = await Client.PostAsync("/api/product", new StringContent(JsonConvert.SerializeObject(createForm0), Encoding.UTF8, "application/json"));
 
-            response.StatusCode.Should().BeEquivalentTo(201);
+            response.StatusCode.Should().Be(201);
 
             var product6 = JsonConvert.DeserializeObject<ProductDto>(response.Content.ReadAsStringAsync().Result);
-            product6.Id.Should().BeGreaterOrEqualTo(6);
+            product6.Id.Should().Be(6);
         }
 
         [Fact]
@@ -50,13 +50,15 @@ namespace endpoint.Tests
         {
             await SeedData();
 
-            var createForm0 = GenerateCreateForm("Product6", 10);
-            var response = await Client.PostAsync("/api/product", new StringContent(JsonConvert.SerializeObject(createForm0), Encoding.UTF8, "application/json"));
+            var updateForm = GenerateUpdateForm(5, "Product5Updated", 12345);
+            var response = await Client.PutAsync("/api/product/5", new StringContent(JsonConvert.SerializeObject(updateForm), Encoding.UTF8, "application/json"));
 
-            response.StatusCode.Should().BeEquivalentTo(201);
+            response.StatusCode.Should().Be(204);
 
-            var product6 = JsonConvert.DeserializeObject<ProductDto>(response.Content.ReadAsStringAsync().Result);
-            product6.Id.Should().BeGreaterOrEqualTo(6);
+            var updatedProductResponse = await Client.GetAsync("api/product/5");
+            var product5 = JsonConvert.DeserializeObject<ProductDto>(updatedProductResponse.Content.ReadAsStringAsync().Result);
+            product5.Name.Should().Be(updateForm.Name);
+            product5.Stock.Should().Be(12345);
         }
 
         private void SetUpClient()
@@ -120,6 +122,16 @@ namespace endpoint.Tests
         {
             return new ProductDto()
             {
+                Name = name,
+                Stock = stock
+            };
+        }
+
+        private ProductDto GenerateUpdateForm(int id, string name, int stock)
+        {
+            return new ProductDto()
+            {
+                Id = id,
                 Name = name,
                 Stock = stock
             };

@@ -44,14 +44,17 @@
 
         // PUT: api/Products/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProduct(int id, ProductDto product)
+        public async Task<IActionResult> PutProduct(int id, ProductDto productDto)
         {
-            if (id != product.Id)
+            if (id != productDto.Id)
             {
                 return BadRequest();
             }
 
-            await productRepository.Update(ReverseMap(product));
+            var product = await productRepository.Get(p => p.Id == id);
+            product.Name = productDto.Name;
+            product.Stock = productDto.Stock;
+            await productRepository.Update(product);
 
             return NoContent();
         }
