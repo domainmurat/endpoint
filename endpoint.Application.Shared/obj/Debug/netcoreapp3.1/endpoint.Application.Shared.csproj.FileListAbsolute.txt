@@ -5,3 +5,4 @@ C:\Users\murat\source\repos\endpoint\endpoint.Application.Shared\obj\Debug\netco
 C:\Users\murat\source\repos\endpoint\endpoint.Application.Shared\obj\Debug\netcoreapp3.1\endpoint.Application.Shared.AssemblyInfo.cs
 C:\Users\murat\source\repos\endpoint\endpoint.Application.Shared\obj\Debug\netcoreapp3.1\endpoint.Application.Shared.dll
 C:\Users\murat\source\repos\endpoint\endpoint.Application.Shared\obj\Debug\netcoreapp3.1\endpoint.Application.Shared.pdb
+C:\Users\murat\source\repos\endpoint\endpoint.Application.Shared\obj\Debug\netcoreapp3.1\endpoint.Application.Shared.csprojAssemblyReference.cache

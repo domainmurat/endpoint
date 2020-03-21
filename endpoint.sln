@@ -7,13 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{91583171-E07
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F93829A7-E585-40C7-B3D4-F7F5B9412BC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "endpoint.Core", "Core\endpoint.Core.csproj", "{AED8E394-87F5-440E-8D1B-F6D042406A89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "endpoint.Core", "Core\endpoint.Core.csproj", "{AED8E394-87F5-440E-8D1B-F6D042406A89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "endpoint.Web.Host", "endpoint.Web.Host\endpoint.Web.Host.csproj", "{4A54DEC1-12CC-4C83-B35E-F120AF74BB03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "endpoint.Web.Host", "endpoint.Web.Host\endpoint.Web.Host.csproj", "{4A54DEC1-12CC-4C83-B35E-F120AF74BB03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "endpoint.EntityFrameworkCore", "endpoint.EntityFrameWorkCore\endpoint.EntityFrameworkCore.csproj", "{F468EE37-722C-48BA-B268-0A3C449BC65F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "endpoint.EntityFrameworkCore", "endpoint.EntityFrameWorkCore\endpoint.EntityFrameworkCore.csproj", "{F468EE37-722C-48BA-B268-0A3C449BC65F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "endpoint.Application.Shared", "endpoint.Application.Shared\endpoint.Application.Shared.csproj", "{FEC6EF22-DED1-4854-A744-05A15B8E1057}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "endpoint.Application.Shared", "endpoint.Application.Shared\endpoint.Application.Shared.csproj", "{FEC6EF22-DED1-4854-A744-05A15B8E1057}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "endpoint.Tests", "endpoint.Tests\endpoint.Tests.csproj", "{C87F16F7-CFD1-4230-8E11-B17C504D8520}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{FEC6EF22-DED1-4854-A744-05A15B8E1057}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEC6EF22-DED1-4854-A744-05A15B8E1057}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEC6EF22-DED1-4854-A744-05A15B8E1057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C87F16F7-CFD1-4230-8E11-B17C504D8520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C87F16F7-CFD1-4230-8E11-B17C504D8520}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C87F16F7-CFD1-4230-8E11-B17C504D8520}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C87F16F7-CFD1-4230-8E11-B17C504D8520}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{4A54DEC1-12CC-4C83-B35E-F120AF74BB03} = {91583171-E077-4F0C-A27E-A87B77586929}
 		{F468EE37-722C-48BA-B268-0A3C449BC65F} = {91583171-E077-4F0C-A27E-A87B77586929}
 		{FEC6EF22-DED1-4854-A744-05A15B8E1057} = {91583171-E077-4F0C-A27E-A87B77586929}
+		{C87F16F7-CFD1-4230-8E11-B17C504D8520} = {F93829A7-E585-40C7-B3D4-F7F5B9412BC5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8BF449FB-9938-49DB-94E3-8D94E1BE75AC}

@@ -1,24 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using endpoint.Core.Products;
-using endpoint.EntityFrameworkCore.EntityFrameworkCore;
-using endpoint.EntityFrameworkCore.Repositories;
-using endpoint.Application.Shared.Products.Dto;
-
-namespace endpoint.Web.Host.Controllers
+﻿namespace endpoint.Web.Host.Controllers
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using endpoint.Application.Shared.Products.Dto;
+    using endpoint.Core.Products;
+    using endpoint.EntityFrameworkCore.Repositories;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
+
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class ProductController : ControllerBase
     {
         private readonly IRepository<Product> productRepository;
 
-        public ProductsController(IRepository<Product> productRepository)
+        public ProductController(IRepository<Product> productRepository)
         {
             this.productRepository = productRepository;
         }
@@ -61,11 +58,12 @@ namespace endpoint.Web.Host.Controllers
 
         // POST: api/Products
         [HttpPost]
-        public async Task<ActionResult<ProductDto>> PostProduct(ProductDto product)
+        public async Task<ActionResult<ProductDto>> PostProduct(ProductDto productDto)
         {
-            await productRepository.Add(ReverseMap(product));
+            var product = ReverseMap(productDto);
+            await productRepository.Add(product);
 
-            return CreatedAtAction("GetProduct", new { id = product.Id }, product);
+            return CreatedAtAction("GetProduct", new { id = product.Id }, Map(product));
         }
 
         // DELETE: api/Products/5
