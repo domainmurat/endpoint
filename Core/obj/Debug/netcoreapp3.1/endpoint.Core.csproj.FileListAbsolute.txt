@@ -1,0 +1,8 @@
+C:\Users\murat\source\repos\endpoint\Core\bin\Debug\netcoreapp3.1\endpoint.Core.deps.json
+C:\Users\murat\source\repos\endpoint\Core\bin\Debug\netcoreapp3.1\endpoint.Core.dll
+C:\Users\murat\source\repos\endpoint\Core\bin\Debug\netcoreapp3.1\endpoint.Core.pdb
+C:\Users\murat\source\repos\endpoint\Core\obj\Debug\netcoreapp3.1\endpoint.Core.AssemblyInfoInputs.cache
+C:\Users\murat\source\repos\endpoint\Core\obj\Debug\netcoreapp3.1\endpoint.Core.AssemblyInfo.cs
+C:\Users\murat\source\repos\endpoint\Core\obj\Debug\netcoreapp3.1\endpoint.Core.dll
+C:\Users\murat\source\repos\endpoint\Core\obj\Debug\netcoreapp3.1\endpoint.Core.pdb
+C:\Users\murat\source\repos\endpoint\Core\obj\Debug\netcoreapp3.1\endpoint.Core.csprojAssemblyReference.cache
