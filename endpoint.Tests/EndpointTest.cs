@@ -61,6 +61,21 @@ namespace endpoint.Tests
             product5.Stock.Should().Be(12345);
         }
 
+
+        [Fact]
+        public async Task DeleteTestCase()
+        {
+            await SeedData();
+
+            var response = await Client.DeleteAsync("/api/product/5");
+
+            response.StatusCode.Should().Be(204);
+
+            var deletedtedProductResponse = await Client.GetAsync("api/product/5");
+            var deletedProduct5 = JsonConvert.DeserializeObject<ProductDto>(deletedtedProductResponse.Content.ReadAsStringAsync().Result);
+            deletedProduct5.Id.Should().Be(0);
+        }
+
         private void SetUpClient()
         {
 
