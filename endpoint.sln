@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "endpoint.EntityFrameworkCor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "endpoint.Application.Shared", "endpoint.Application.Shared\endpoint.Application.Shared.csproj", "{FEC6EF22-DED1-4854-A744-05A15B8E1057}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "endpoint.Tests", "endpoint.Tests\endpoint.Tests.csproj", "{C87F16F7-CFD1-4230-8E11-B17C504D8520}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "endpoint.Tests", "endpoint.Tests\endpoint.Tests.csproj", "{C87F16F7-CFD1-4230-8E11-B17C504D8520}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "endpoint.Core.Shared", "endpoint.Core.Shared\endpoint.Core.Shared.csproj", "{F1A6AE72-5761-4B00-A944-457AED505111}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{C87F16F7-CFD1-4230-8E11-B17C504D8520}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C87F16F7-CFD1-4230-8E11-B17C504D8520}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C87F16F7-CFD1-4230-8E11-B17C504D8520}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1A6AE72-5761-4B00-A944-457AED505111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1A6AE72-5761-4B00-A944-457AED505111}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1A6AE72-5761-4B00-A944-457AED505111}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1A6AE72-5761-4B00-A944-457AED505111}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{F468EE37-722C-48BA-B268-0A3C449BC65F} = {91583171-E077-4F0C-A27E-A87B77586929}
 		{FEC6EF22-DED1-4854-A744-05A15B8E1057} = {91583171-E077-4F0C-A27E-A87B77586929}
 		{C87F16F7-CFD1-4230-8E11-B17C504D8520} = {F93829A7-E585-40C7-B3D4-F7F5B9412BC5}
+		{F1A6AE72-5761-4B00-A944-457AED505111} = {91583171-E077-4F0C-A27E-A87B77586929}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8BF449FB-9938-49DB-94E3-8D94E1BE75AC}

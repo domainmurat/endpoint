@@ -5,6 +5,7 @@ namespace endpoint.Web.Host
     using System.Linq;
     using System.Threading.Tasks;
     using endpoint.EntityFrameworkCore.EntityFrameworkCore;
+    using endpoint.EntityFrameworkCore.Managers;
     using endpoint.EntityFrameworkCore.Repositories;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -31,6 +32,7 @@ namespace endpoint.Web.Host
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped(typeof(IRepository<>), typeof(EFRepository<>));
+            services.AddScoped(typeof(IBasketProductManager), typeof(BasketProductManager));
             services.AddDbContext<EndpointDbContext>(options => options.UseLazyLoadingProxies().UseSqlite($"Data Source={DatabaseFileName}"));
 
             services.AddControllers();

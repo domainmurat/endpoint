@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Core\endpoint.Core.csproj" />
+    <ProjectReference Include="..\endpoint.Core.Shared\endpoint.Core.Shared.csproj" />
   </ItemGroup>
 
 </Project>

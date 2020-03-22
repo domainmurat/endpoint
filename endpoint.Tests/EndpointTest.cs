@@ -13,6 +13,8 @@ using System.Text;
 using FluentAssertions;
 using endpoint.EntityFrameworkCore.EntityFrameworkCore;
 using endpoint.Application.Shared.Products.Dto;
+using endpoint.Core.Baskets;
+using endpoint.Application.Shared.Baskets;
 
 namespace endpoint.Tests
 {
@@ -76,6 +78,17 @@ namespace endpoint.Tests
             deletedProduct5.Id.Should().Be(0);
         }
 
+        [Fact]
+        public async Task AddProductToBasket()
+        {
+            await SeedData();
+
+            var response = await Client.PostAsync("api/basketproduct", new StringContent(JsonConvert.SerializeObject(5), Encoding.UTF8, "application/json"));
+            var responseDto = JsonConvert.DeserializeObject<BasketProductDto>(response.Content.ReadAsStringAsync().Result);
+            responseDto.Quantity.Should().Be(1);
+            responseDto.Product.Stock.Should().Be(49);
+        }
+
         private void SetUpClient()
         {
 
@@ -130,7 +143,6 @@ namespace endpoint.Tests
             // Create entry with id 5
             var createForm4 = GenerateCreateForm("Product5", 50);
             var response4 = await Client.PostAsync("/api/product", new StringContent(JsonConvert.SerializeObject(createForm4), Encoding.UTF8, "application/json"));
-
         }
 
         private ProductDto GenerateCreateForm(string name, int stock)
